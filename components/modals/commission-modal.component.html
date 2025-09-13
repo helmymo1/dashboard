@@ -1,0 +1,6 @@
+<app-modal [isOpen]="isOpen" [title]="'Commission per student details'" (closed)="closeModal()">
+  <div class="commission-modal-content">
+    <p>This is the percentage you earn from each student's subscription, based on our agreement. You will continue receiving this commission as long as the student remains subscribed—whether monthly, semi-annually, or annually—until they unsubscribe.</p>
+    <button class="done-btn" (click)="closeModal()">Done</button>
+  </div>
+</app-modal>

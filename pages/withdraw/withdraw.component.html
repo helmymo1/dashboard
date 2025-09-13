@@ -1,0 +1,113 @@
+<div class="withdraw-container">
+  <div class="profit-card">
+    <div class="profit-info">
+      <h3>Your Profit</h3>
+      <p class="profit-amount">200.00 <span>$</span></p>
+      <p>Your current balance available for withdrawal is <strong>200.00 SAR</strong>.</p>
+      <p>You can withdraw this amount using any of the methods available below.</p>
+    </div>
+    <div class="promo-code">
+      <span class="icon promo"></span>
+      Promocode: #AH1234
+      <p>Start from 02/2024 to 10/2024</p>
+    </div>
+  </div>
+
+  <div class="withdraw-request-section">
+    <h3>Request to withdraw an amount</h3>
+    <p>Choose the withdrawal method</p>
+    <div class="method-selection">
+      <button [class.active]="selectedMethod === 'bank'" (click)="selectMethod('bank')">Bank Transfer</button>
+      <button [class.active]="selectedMethod === 'stc'" (click)="selectMethod('stc')">STC</button>
+    </div>
+
+    <form class="withdraw-form">
+      <div *ngIf="selectedMethod === 'bank'">
+        <div class="form-grid">
+          <div>
+            <label>Bank Name</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Account Number</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Account Holder's Name</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>IBAN</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Account Type</label>
+            <select>
+              <option>--</option>
+            </select>
+          </div>
+          <div>
+            <label>Amount to Withdraw</label>
+            <input type="text" value="200,00 SAR">
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="selectedMethod === 'stc'">
+        <div class="form-grid">
+          <div>
+            <label>Mobile Number</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Account Holder's Name</label>
+            <input type="text">
+          </div>
+          <div>
+            <label>Amount to Withdraw</label>
+            <input type="text" value="200,00 SAR">
+          </div>
+        </div>
+      </div>
+
+      <button type="submit" class="request-btn" (click)="isWithdrawalSubmittedModalOpen = true">Request</button>
+    </form>
+  </div>
+
+  <div class="withdrawal-history-section">
+    <app-withdrawal-submitted-modal [isOpen]="isWithdrawalSubmittedModalOpen" (closed)="isWithdrawalSubmittedModalOpen = false"></app-withdrawal-submitted-modal>
+    <h3>Withdrawal history</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Method</th>
+          <th>Amount</th>
+          <th>Status</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>January 10, 2025</td>
+          <td>Bank Transfer</td>
+          <td>200,00 SAR</td>
+          <td>Completed</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td>January 5, 2025</td>
+          <td>STC</td>
+          <td>200,00 SAR</td>
+          <td>Completed</td>
+          <td>-</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4" class="total">Total withdrawal: <strong>400,00 SAR</strong></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

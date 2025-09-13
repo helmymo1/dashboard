@@ -6,9 +6,9 @@ import { WithdrawComponent } from './pages/withdraw/withdraw.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/overview', pathMatch: 'full' },
-  { path: 'overview', component: OverviewComponent },
-  { path: 'profile', component: ProfileComponent },
-  { path: 'withdraw', component: WithdrawComponent },
+  { path: 'overview', component: OverviewComponent, data: { title: 'Overview' } },
+  { path: 'profile', component: ProfileComponent, data: { title: 'Profile' } },
+  { path: 'withdraw', component: WithdrawComponent, data: { title: 'Withdraw' } },
 ];
 
 @NgModule({

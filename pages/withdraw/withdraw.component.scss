@@ -1,0 +1,93 @@
+.withdraw-container {
+  padding: 20px;
+}
+
+.profit-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #4a47a3;
+  color: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.profit-amount {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.profit-amount span {
+  font-size: 24px;
+}
+
+.promo-code {
+  background-color: #fff;
+  color: #333;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.withdraw-request-section, .withdrawal-history-section {
+  padding: 20px;
+  border-radius: 10px;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+}
+
+.method-selection button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.method-selection button.active {
+  background-color: #4a47a3;
+  color: #fff;
+  border-color: #4a47a3;
+}
+
+.withdraw-form {
+  margin-top: 20px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+}
+
+.request-btn {
+  margin-top: 20px;
+  background-color: #4a47a3;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+th {
+  background-color: #f8f9fa;
+}
+
+.total {
+  text-align: right;
+  font-weight: bold;
+}

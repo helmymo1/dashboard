@@ -1,0 +1,52 @@
+.sidebar {
+  width: 250px;
+  background-color: #f8f9fa;
+  padding: 20px;
+  height: 100vh;
+}
+
+.logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav ul li a {
+  display: flex;
+  align-items: center;
+  padding: 15px 10px;
+  color: #333;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+nav ul li a.active {
+  background-color: #e9ecef;
+  color: #007bff;
+}
+
+.icon {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.overview {
+  background-image: url('assets/icons/overview.svg');
+}
+
+.profile {
+  background-image: url('assets/icons/profile.svg');
+}
+
+.withdraw {
+  background-image: url('assets/icons/withdraw.svg');
+}
