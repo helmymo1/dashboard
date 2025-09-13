@@ -8,7 +8,7 @@ import { filter, map } from 'rxjs/operators';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  pageTitle: string;
+  pageTitle: string = '';
 
   constructor(private router: Router, private activatedRoute: ActivatedRoute) {}
 
@@ -17,10 +17,10 @@ export class HeaderComponent implements OnInit {
       filter(event => event instanceof NavigationEnd),
       map(() => {
         let child = this.activatedRoute.firstChild;
-        while (child.firstChild) {
+        while (child && child.firstChild) {
           child = child.firstChild;
         }
-        if (child.snapshot.data['title']) {
+        if (child && child.snapshot.data['title']) {
           return child.snapshot.data['title'];
         }
         return 'Dashboard';

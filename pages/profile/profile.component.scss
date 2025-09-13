@@ -72,9 +72,9 @@
   background-repeat: no-repeat;
 }
 
-.social-link.facebook .icon { background-image: url('assets/icons/facebook.svg'); }
-.social-link.instagram .icon { background-image: url('assets/icons/instagram.svg'); }
-.social-link.tiktok .icon { background-image: url('assets/icons/tiktok.svg'); }
+.social-link.facebook .icon { background-image: url('../../assets/icons/facebook.svg'); }
+.social-link.instagram .icon { background-image: url('../../assets/icons/instagram.svg'); }
+.social-link.tiktok .icon { background-image: url('../../assets/icons/tiktok.svg'); }
 
 
 .personal-information-section, .barcode-information-section {
@@ -117,7 +117,7 @@ input, textarea {
 .extend-barcode .icon {
   width: 20px;
   height: 20px;
-  background-image: url('assets/icons/star.svg');
+  background-image: url('../../assets/icons/star.svg');
   margin-right: 10px;
 }
 
