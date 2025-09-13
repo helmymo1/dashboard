@@ -17,17 +17,17 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/cosqol-dashboard",
-            "index": "index.html",
-            "main": "main.ts",
-            "polyfills": "polyfills.ts",
+            "outputPath": "dist/dashboard",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
             "aot": true,
             "assets": [
-              "assets"
+              "src/assets"
             ],
             "styles": [
-              "styles.scss"
+              "src/styles.scss"
             ],
             "scripts": []
           },
