@@ -7,10 +7,15 @@ import { OverviewComponent } from './pages/overview/overview.component';
 import { ProfileComponent } from './pages/profile/profile.component';
 import { WithdrawComponent } from './pages/withdraw/withdraw.component';
 
-import { HeaderComponent } from './shared/components/header/header.component';
-import { SidebarComponent } from './shared/components/sidebar/sidebar.component';
-import { CardComponent } from './shared/components/card/card.component';
-import { TableComponent } from './shared/components/table/table.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { CardComponent } from './components/card/card.component';
+import { TableComponent } from './components/table/table.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { CommissionModalComponent } from './components/modals/commission-modal.component';
+import { DiscountModalComponent } from './components/modals/discount-modal.component';
+import { ExtendBarcodeModalComponent } from './components/modals/extend-barcode-modal.component';
+import { WithdrawalSubmittedModalComponent } from './components/modals/withdrawal-submitted-modal.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +26,12 @@ import { TableComponent } from './shared/components/table/table.component';
     HeaderComponent,
     SidebarComponent,
     CardComponent,
-    TableComponent
+    TableComponent,
+    ModalComponent,
+    CommissionModalComponent,
+    DiscountModalComponent,
+    ExtendBarcodeModalComponent,
+    WithdrawalSubmittedModalComponent
   ],
   imports: [
     BrowserModule,

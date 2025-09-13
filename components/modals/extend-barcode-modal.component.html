@@ -1,0 +1,19 @@
+<app-modal [isOpen]="isOpen" [title]="'To extend the barcode activation period'" (closed)="closeModal()">
+  <div class="extend-barcode-modal-content">
+    <form>
+      <div>
+        <label>Your name</label>
+        <input type="text" value="Ahmed">
+      </div>
+      <div>
+        <label>Activation start</label>
+        <input type="text" value="Ahmedmohamed345@gmail.com">
+      </div>
+      <div>
+        <label>End of activation</label>
+        <input type="text" value="Social media influencer">
+      </div>
+      <button class="done-btn" type="submit" (click)="closeModal()">Done</button>
+    </form>
+  </div>
+</app-modal>

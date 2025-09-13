@@ -1,0 +1,105 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <div class="profile-card">
+      <img src="assets/user-avatar.png" alt="User Avatar" class="avatar">
+      <h3>Ahmed MO.</h3>
+      <p>Social media influencer</p>
+      <p>32 years, Cairo, Egypt</p>
+    </div>
+    <div class="social-media-section">
+      <div class="section-header">
+        <h3>Social Media</h3>
+        <button class="edit-btn" *ngIf="!isEditingSocial" (click)="isEditingSocial = true">Edit <span class="icon edit"></span></button>
+        <button class="done-btn" *ngIf="isEditingSocial" (click)="isEditingSocial = false">Done</button>
+      </div>
+      <div class="social-links">
+        <div class="social-link facebook">
+          <span class="icon"></span>
+          <div>
+            <p>Facebook</p>
+            <a *ngIf="!isEditingSocial" href="https://www.facebook.com/ahmed.mohamed">https://www.facebook.com/ahmed.mohamed</a>
+            <input *ngIf="isEditingSocial" type="text" value="https://www.facebook.com/ahmed.mohamed">
+            <p>Number of students from Facebook</p>
+          </div>
+        </div>
+        <div class="social-link instagram">
+          <span class="icon"></span>
+          <div>
+            <p>Instagram</p>
+            <a *ngIf="!isEditingSocial" href="https://www.instagram.com/ahmed.mohamed">https://www.instagram.com/ahmed.mohamed</a>
+            <input *ngIf="isEditingSocial" type="text" value="https://www.instagram.com/ahmed.mohamed">
+            <p>Number of students from Instagram</p>
+          </div>
+        </div>
+        <div class="social-link tiktok">
+          <span class="icon"></span>
+          <div>
+            <p>Tiktok</p>
+            <a *ngIf="!isEditingSocial" href="https://www.tiktok.com/@ahmed.mohamed">https://www.tiktok.com/@ahmed.mohamed</a>
+            <input *ngIf="isEditingSocial" type="text" value="https://www.tiktok.com/@ahmed.mohamed">
+            <p>Number of students from Tiktok</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="personal-information-section">
+    <div class="section-header">
+      <h3>Personal Information</h3>
+      <button class="edit-btn" *ngIf="!isEditingPersonalInfo" (click)="isEditingPersonalInfo = true">Edit <span class="icon edit"></span></button>
+      <button class="done-btn" *ngIf="isEditingPersonalInfo" (click)="isEditingPersonalInfo = false">Done</button>
+    </div>
+    <div class="info-grid">
+      <div>
+        <label>First name</label>
+        <p *ngIf="!isEditingPersonalInfo">Ahmed</p>
+        <input *ngIf="isEditingPersonalInfo" type="text" value="Ahmed">
+      </div>
+      <div>
+        <label>Last name</label>
+        <p *ngIf="!isEditingPersonalInfo">Mohamed</p>
+        <input *ngIf="isEditingPersonalInfo" type="text" value="Mohamed">
+      </div>
+      <div>
+        <label>Email</label>
+        <p *ngIf="!isEditingPersonalInfo">Ahmedmohamed345@gmail.com</p>
+        <input *ngIf="isEditingPersonalInfo" type="email" value="Ahmedmohamed345@gmail.com">
+      </div>
+      <div>
+        <label>Phone</label>
+        <p *ngIf="!isEditingPersonalInfo">012 345 6789</p>
+        <input *ngIf="isEditingPersonalInfo" type="tel" value="012 345 6789">
+      </div>
+      <div class="bio">
+        <label>BIO</label>
+        <p *ngIf="!isEditingPersonalInfo">Social media influencer</p>
+        <textarea *ngIf="isEditingPersonalInfo">Social media influencer</textarea>
+      </div>
+    </div>
+  </div>
+
+  <div class="barcode-information-section">
+    <h3>Barcode Information</h3>
+    <div class="barcode-grid">
+      <div>
+        <label>Barcode</label>
+        <p>#ahmed123</p>
+      </div>
+      <div>
+        <label>Activation start</label>
+        <p>02/2024</p>
+      </div>
+      <div>
+        <label>End of activation</label>
+        <p>05/2024</p>
+      </div>
+    </div>
+    <div class="extend-barcode">
+      <span class="icon star"></span>
+      <p>To extend the barcode activation period</p>
+      <button (click)="isExtendBarcodeModalOpen = true">Request</button>
+    </div>
+  </div>
+</div>
+<app-extend-barcode-modal [isOpen]="isExtendBarcodeModalOpen" (closed)="isExtendBarcodeModalOpen = false"></app-extend-barcode-modal>

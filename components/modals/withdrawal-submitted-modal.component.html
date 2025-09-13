@@ -1,0 +1,6 @@
+<app-modal [isOpen]="isOpen" [title]="'Withdrawal Request Submitted'" (closed)="closeModal()">
+  <div class="withdrawal-submitted-modal-content">
+    <p>You will be notified once your order has been processed. Thank you for your order!</p>
+    <button class="done-btn" (click)="closeModal()">Done</button>
+  </div>
+</app-modal>

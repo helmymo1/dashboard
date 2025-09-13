@@ -1,0 +1,6 @@
+<app-modal [isOpen]="isOpen" [title]="'Student Discount details'" (closed)="closeModal()">
+  <div class="discount-modal-content">
+    <p>This is the discount percentage you can offer to your audience on social media. The discount amount is based on our agreement. After the discount is applied, your commission will be calculated accordingly.</p>
+    <button class="done-btn" (click)="closeModal()">Done</button>
+  </div>
+</app-modal>

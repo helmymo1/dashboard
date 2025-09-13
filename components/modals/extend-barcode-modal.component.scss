@@ -1,0 +1,16 @@
+.extend-barcode-modal-content form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.done-btn {
+  margin-top: 20px;
+  background-color: #4a47a3;
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  align-self: center;
+}

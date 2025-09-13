@@ -1,1 +1,11 @@
-body { font-family: Arial, sans-serif; }
+body {
+  font-family: Arial, sans-serif;
+}
+
+.app-container {
+  display: flex;
+}
+
+.main-content {
+  flex-grow: 1;
+}
