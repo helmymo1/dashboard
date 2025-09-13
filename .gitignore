@@ -75,3 +75,6 @@ dist/
 # vercel
 .vercel
 /output
+
+# Angular cache
+.angular/
