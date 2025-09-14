@@ -1,5 +1,9 @@
-<app-modal [isOpen]="isOpen" [title]="'Withdrawal Request Submitted'" (closed)="closeModal()">
-  <div class="withdrawal-submitted-modal-content">
+<app-modal [isOpen]="isOpen" (closed)="closeModal()">
+  <div class="modal-header">
+    <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/check.svg)'" [style.mask-image]="'url(assets/icons/check.svg)'"></span>
+    <h4>Withdrawal Request Submitted</h4>
+  </div>
+  <div class="modal-body">
     <p>You will be notified once your order has been processed. Thank you for your order!</p>
     <button class="done-btn" (click)="closeModal()">Done</button>
   </div>

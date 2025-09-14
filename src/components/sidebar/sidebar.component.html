@@ -1,27 +1,28 @@
-<div class="sidebar">
+<aside class="sidebar">
   <div class="logo">
-    <img src="assets/logo.png" alt="cosqol logo" />
+    <!-- Assuming the logo is in the assets folder -->
+    <img src="assets/logo.svg" alt="Cosqol Logo" />
   </div>
   <nav>
     <ul>
       <li>
-        <a routerLink="/overview" routerLinkActive="active">
-          <span class="icon overview"></span>
+        <a routerLink="/overview" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <span class="icon" style="-webkit-mask-image: url('assets/icons/overview.svg'); mask-image: url('assets/icons/overview.svg');"></span>
           Overview
         </a>
       </li>
       <li>
         <a routerLink="/profile" routerLinkActive="active">
-          <span class="icon profile"></span>
+          <span class="icon" style="-webkit-mask-image: url('assets/icons/profile.svg'); mask-image: url('assets/icons/profile.svg');"></span>
           Profile
         </a>
       </li>
       <li>
         <a routerLink="/withdraw" routerLinkActive="active">
-          <span class="icon withdraw"></span>
+          <span class="icon" style="-webkit-mask-image: url('assets/icons/withdraw.svg'); mask-image: url('assets/icons/withdraw.svg');"></span>
           Withdraw
         </a>
       </li>
     </ul>
   </nav>
-</div>
+</aside>
