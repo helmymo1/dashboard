@@ -1,5 +1,9 @@
-<app-modal [isOpen]="isOpen" [title]="'Commission per student details'" (closed)="closeModal()">
-  <div class="commission-modal-content">
+<app-modal [isOpen]="isOpen" (closed)="closeModal()">
+  <div class="modal-header">
+    <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/info.svg)'" [style.mask-image]="'url(assets/icons/info.svg)'"></span>
+    <h4>Commission per student details</h4>
+  </div>
+  <div class="modal-body">
     <p>This is the percentage you earn from each student's subscription, based on our agreement. You will continue receiving this commission as long as the student remains subscribed—whether monthly, semi-annually, or annually—until they unsubscribe.</p>
     <button class="done-btn" (click)="closeModal()">Done</button>
   </div>

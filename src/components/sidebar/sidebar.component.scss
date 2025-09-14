@@ -1,42 +1,78 @@
+@import '../../variables';
+
 .sidebar {
-  width: 250px;
-  background-color: #f8f9fa;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 280px;
+  background-color: $color-surface;
+  padding: $spacing-lg 0;
   height: 100vh;
+  border-right: 1px solid $color-border;
+  box-shadow: $box-shadow-light;
 }
 
 .logo {
-  text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: $spacing-xl;
+  img {
+    width: 120px; // Adjust based on the actual logo size
+  }
 }
 
-nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+nav {
+  width: 100%;
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
-nav ul li a {
-  display: flex;
-  align-items: center;
-  padding: 15px 10px;
-  color: #333;
-  text-decoration: none;
-  border-radius: 5px;
-}
+nav ul li {
+  width: 80%;
+  margin-bottom: $spacing-sm;
 
-nav ul li a.active {
-  background-color: #e9ecef;
-  color: #007bff;
+  a {
+    display: flex;
+    align-items: center;
+    padding: $spacing-sm $spacing-md;
+    color: $color-text-light;
+    text-decoration: none;
+    border-radius: $border-radius-md;
+    transition: all 0.3s ease;
+    font-weight: $font-weight-medium;
+
+    .icon {
+      display: inline-block;
+      width: 24px;
+      height: 24px;
+      margin-right: $spacing-md;
+      background-color: $color-text-light;
+      transition: background-color 0.3s ease;
+    }
+
+    &.active, &:hover {
+      background-color: $color-primary;
+      color: $color-surface;
+
+      .icon {
+        background-color: $color-surface;
+      }
+    }
+  }
 }
 
 .icon {
-  display: inline-block;
-  width: 20px;
-  height: 20px;
-  margin-right: 10px;
-  background-size: contain;
-  background-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
 }
 
 .overview {

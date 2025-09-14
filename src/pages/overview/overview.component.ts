@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-overview',
@@ -8,9 +9,11 @@ import { Component } from '@angular/core';
 export class OverviewComponent {
   isCommissionModalOpen = false;
   isDiscountModalOpen = false;
-  selectedSubscriptionPeriod: 'month' | '6-months' | 'yearly' = 'month';
 
-  selectSubscriptionPeriod(period: 'month' | '6-months' | 'yearly') {
-    this.selectedSubscriptionPeriod = period;
+  constructor(private router: Router) {}
+
+  navigateToSubscriptionDetails(period: 'month' | '6-months' | 'yearly') {
+    // This is a placeholder navigation. You might need to update the route path and parameters.
+    this.router.navigate(['/subscription', period]);
   }
 }

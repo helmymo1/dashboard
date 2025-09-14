@@ -1,21 +1,66 @@
-.withdrawal-submitted-modal-content {
-  text-align: center;
-}
+@import '../../variables';
 
-.done-btn {
-  margin-top: 20px;
-  background-color: #4a47a3;
-  color: #fff;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
-  cursor: pointer;
+:host {
+  ::ng-deep .modal-content {
+    max-width: 500px;
+    border-radius: $border-radius-lg;
+    padding: 0;
+    overflow: hidden;
+  }
 }
 
 .modal-header {
-  background-color: #28a745;
-  color: white;
-  padding: 10px;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+  display: flex;
+  align-items: center;
+  padding: $spacing-md;
+  background-color: $color-accent;
+  color: $color-surface;
+
+  .icon {
+    width: 24px;
+    height: 24px;
+    margin-right: $spacing-sm;
+    background-color: $color-surface;
+  }
+
+  h4 {
+    margin: 0;
+    font-size: $font-size-lg;
+    font-weight: $font-weight-medium;
+    color: $color-surface;
+  }
+}
+
+.modal-body {
+  padding: $spacing-lg;
+  text-align: center;
+
+  p {
+    line-height: 1.6;
+    color: $color-text;
+    margin-bottom: $spacing-lg;
+  }
+
+  .done-btn {
+    background-color: transparent;
+    border: none;
+    color: $color-primary;
+    font-weight: $font-weight-bold;
+    font-size: $font-size-base;
+    cursor: pointer;
+    padding: $spacing-sm $spacing-lg;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.icon {
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
 }

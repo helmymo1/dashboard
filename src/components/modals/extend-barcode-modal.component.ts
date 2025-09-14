@@ -12,4 +12,9 @@ export class ExtendBarcodeModalComponent {
   closeModal() {
     this.closed.emit();
   }
+
+  onSubmit() {
+    // Handle form submission logic here
+    this.closeModal();
+  }
 }

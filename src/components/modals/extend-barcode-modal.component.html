@@ -1,19 +1,22 @@
-<app-modal [isOpen]="isOpen" [title]="'To extend the barcode activation period'" (closed)="closeModal()">
-  <div class="extend-barcode-modal-content">
-    <form>
-      <div>
-        <label>Your name</label>
-        <input type="text" value="Ahmed">
+<app-modal [isOpen]="isOpen" (closed)="closeModal()">
+  <div class="modal-header">
+    <h4>To extend the barcode activation period</h4>
+  </div>
+  <div class="modal-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="name">Your name</label>
+        <input id="name" type="text" value="Ahmed">
       </div>
-      <div>
-        <label>Activation start</label>
-        <input type="text" value="Ahmedmohamed345@gmail.com">
+      <div class="form-group">
+        <label for="activationStart">Activation start</label>
+        <input id="activationStart" type="text" value="Ahmedmohamed345@gmail.com">
       </div>
-      <div>
-        <label>End of activation</label>
-        <input type="text" value="Social media influencer">
+      <div class="form-group">
+        <label for="activationEnd">End of activation</label>
+        <input id="activationEnd" type="text" value="Social media influencer">
       </div>
-      <button class="done-btn" type="submit" (click)="closeModal()">Done</button>
+      <button class="done-btn" type="submit">Done</button>
     </form>
   </div>
 </app-modal>

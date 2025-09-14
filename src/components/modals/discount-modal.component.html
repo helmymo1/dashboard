@@ -1,5 +1,9 @@
-<app-modal [isOpen]="isOpen" [title]="'Student Discount details'" (closed)="closeModal()">
-  <div class="discount-modal-content">
+<app-modal [isOpen]="isOpen" (closed)="closeModal()">
+  <div class="modal-header">
+    <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/info.svg)'" [style.mask-image]="'url(assets/icons/info.svg)'"></span>
+    <h4>Student Discount details</h4>
+  </div>
+  <div class="modal-body">
     <p>This is the discount percentage you can offer to your audience on social media. The discount amount is based on our agreement. After the discount is applied, your commission will be calculated accordingly.</p>
     <button class="done-btn" (click)="closeModal()">Done</button>
   </div>
