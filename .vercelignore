@@ -1,0 +1,7 @@
+node_modules
+.vscode
+src/**/*.spec.ts
+.jules-scratch
+.anima
+README.md
+dashboard-main.zip
