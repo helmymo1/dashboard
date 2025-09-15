@@ -27,15 +27,23 @@
     <p class="profit-description">Lorem ipsum dolor sit amet consectetur. Nisi pulvinar vel pretium ullamcorper eget condimentum risus magna pretium. Amet odio nisl augue sit.</p>
     <div class="promo-container">
       <div class="promo-section">
-        <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/star.svg)'" [style.mask-image]="'url(assets/icons/star.svg)'"></span>
+        <div class="promo-icon-container">
+          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/star.svg)'" [style.mask-image]="'url(assets/icons/star.svg)'"></span>
+        </div>
         <div class="promo-text">
           <p>Promocode: #AH1234</p>
           <small>Start from 02/2024 to 10/2024</small>
         </div>
       </div>
       <div class="details-section">
-        <p><strong>30%</strong> Commission per student <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/info.svg)'" [style.mask-image]="'url(assets/icons/info.svg)'" (click)="isCommissionModalOpen = true"></span></p>
-        <p><strong>15%</strong> Student discount <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/info.svg)'" [style.mask-image]="'url(assets/icons/info.svg)'" (click)="isDiscountModalOpen = true"></span></p>
+        <div class="detail-item">
+          <p><strong>30%</strong> Commission per student</p>
+          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/info.svg)'" [style.mask-image]="'url(assets/icons/info.svg)'" (click)="isCommissionModalOpen = true"></span>
+        </div>
+        <div class="detail-item">
+          <p><strong>15%</strong> Student discount</p>
+          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/info.svg)'" [style.mask-image]="'url(assets/icons/info.svg)'" (click)="isDiscountModalOpen = true"></span>
+        </div>
       </div>
     </div>
   </div>
@@ -43,11 +51,45 @@
   <!-- Monthly Income Card -->
   <div class="card monthly-income">
     <div class="income-header">
-      <h3>Monthly Income</h3>
-      <p>JAN 2025</p>
+      <div>
+        <h3>Monthly Income</h3>
+        <p>JAN 500$</p>
+      </div>
     </div>
-    <div class="chart-placeholder">
-      <!-- Chart will be rendered here -->
+    <div class="chart-container">
+      <div class="y-axis">
+        <span>500s</span>
+        <span>400s</span>
+        <span>300s</span>
+        <span>200s</span>
+        <span>100s</span>
+      </div>
+      <div class="bars">
+        <div class="bar-group">
+          <div class="bar" style="height: 90%;"></div>
+          <span class="label">JAN</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 60%;"></div>
+          <span class="label">FEB</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 30%;"></div>
+          <span class="label">MAR</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 40%;"></div>
+          <span class="label">APR</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 20%;"></div>
+          <span class="label">MAY</span>
+        </div>
+        <div class="bar-group">
+          <div class="bar" style="height: 50%;"></div>
+          <span class="label">JUN</span>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -56,30 +98,36 @@
     <h3>Student Subscription</h3>
     <div class="subscription-item">
       <div class="item-details">
-        <div class="icon">
-          <!-- Icon for monthly -->
+        <div class="icon-container">
+          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/user-group.svg)'" [style.mask-image]="'url(assets/icons/user-group.svg)'"></span>
         </div>
-        <p>Month</p>
+        <div>
+          <p>Month</p>
+          <small>234 students</small>
+        </div>
       </div>
-      <span class="item-count" (click)="navigateToSubscriptionDetails('month')">234 students</span>
     </div>
     <div class="subscription-item">
       <div class="item-details">
-        <div class="icon">
-          <!-- Icon for 6-months -->
+        <div class="icon-container">
+          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/user-group.svg)'" [style.mask-image]="'url(assets/icons/user-group.svg)'"></span>
         </div>
-        <p>6-Months</p>
+        <div>
+          <p>6-Months</p>
+          <small>234 students</small>
+        </div>
       </div>
-      <span class="item-count" (click)="navigateToSubscriptionDetails('6-months')">234 students</span>
     </div>
     <div class="subscription-item">
       <div class="item-details">
-        <div class="icon">
-           <!-- Icon for yearly -->
+        <div class="icon-container">
+          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/user-group.svg)'" [style.mask-image]="'url(assets/icons/user-group.svg)'"></span>
         </div>
-        <p>Yearly</p>
+        <div>
+          <p>Yearly</p>
+          <small>234 students</small>
+        </div>
       </div>
-      <span class="item-count" (click)="navigateToSubscriptionDetails('yearly')">234 students</span>
     </div>
   </div>
 </div>

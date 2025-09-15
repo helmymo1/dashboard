@@ -67,7 +67,10 @@
 
 .profit-card {
   grid-area: profit;
-  background: linear-gradient(105deg, #6e65e2, #4d44b5);
+  background-color: #4d44b5;
+  background-image: url('/assets/wave.svg');
+  background-repeat: no-repeat;
+  background-position: top right;
   color: $color-surface;
   h3, p {
     color: rgba(255, 255, 255, 0.9);
@@ -92,13 +95,14 @@
     max-width: 80%;
   }
   .promo-container {
-    background-color: rgba(255, 255, 255, 0.15);
+    background-color: #5f56d9;
     border-radius: $border-radius-md;
     padding: $spacing-md;
     display: flex;
-    flex-wrap: wrap;
     gap: $spacing-md;
+    align-items: stretch;
   }
+
   .promo-section {
     display: flex;
     align-items: center;
@@ -106,13 +110,22 @@
     border-radius: $border-radius-md;
     padding: $spacing-sm $spacing-md;
     color: $color-text;
-    flex: 1;
+    flex: 1.2;
 
-    .icon {
-      width: 24px;
-      height: 24px;
+    .promo-icon-container {
+      background-color: #e3e0ff;
+      border-radius: 50%;
+      padding: $spacing-sm;
       margin-right: $spacing-sm;
-      background-color: $color-primary;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .icon {
+        width: 24px;
+        height: 24px;
+        background-color: #4d44b5;
+      }
     }
 
     .promo-text {
@@ -127,25 +140,32 @@
       }
     }
   }
+
   .details-section {
     display: flex;
     flex-direction: column;
-    gap: $spacing-sm;
+    gap: $spacing-md;
     flex: 1;
     justify-content: center;
-    p {
+
+    .detail-item {
       display: flex;
       align-items: center;
-      margin: 0;
-      font-size: $font-size-sm;
-      strong {
-        font-size: $font-size-base;
-        margin-right: $spacing-xs;
+      justify-content: space-between;
+
+      p {
+        margin: 0;
+        font-size: $font-size-sm;
+        color: rgba(255, 255, 255, 0.9);
+        strong {
+          font-size: $font-size-base;
+          margin-right: $spacing-xs;
+        }
       }
+
       .icon {
         width: 16px;
         height: 16px;
-        margin-left: $spacing-sm;
         cursor: pointer;
         background-color: rgba(255, 255, 255, 0.8);
       }
@@ -155,23 +175,59 @@
 
 .monthly-income {
   grid-area: income;
-  h3 {
-    margin-bottom: $spacing-sm;
-  }
   .income-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    h3 {
+      margin-bottom: $spacing-xs;
+    }
     p {
       color: $color-text-light;
       font-weight: $font-weight-medium;
     }
   }
-  .chart-placeholder {
-    height: 250px;
+  .chart-container {
+    display: flex;
     margin-top: $spacing-md;
-    // Placeholder for chart styling
+    height: 200px;
+    gap: $spacing-md;
+  }
+  .y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    color: $color-text-light;
+    font-size: $font-size-sm;
+  }
+  .bars {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-around;
+    align-items: flex-end;
+    gap: $spacing-sm;
+    border-left: 1px solid $color-border;
+    padding-left: $spacing-md;
+  }
+  .bar-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex-grow: 1;
+  }
+  .bar {
+    width: 30%;
     background-color: #f0f0f0;
+    border-radius: $border-radius-sm;
+    &:hover {
+      background-color: $color-primary;
+    }
+  }
+  .label {
+    margin-top: $spacing-xs;
+    font-size: $font-size-sm;
+    color: $color-text-light;
   }
 }
 
@@ -190,33 +246,37 @@
     &:last-child {
       border-bottom: none;
     }
+  }
 
-    .item-details {
+  .item-details {
+    display: flex;
+    align-items: center;
+    gap: $spacing-md;
+
+    .icon-container {
+      width: 40px;
+      height: 40px;
+      background-color: #e3e0ff;
+      border-radius: $border-radius-sm;
       display: flex;
+      justify-content: center;
       align-items: center;
+
       .icon {
-        width: 40px;
-        height: 40px;
-        margin-right: $spacing-md;
-        background-color: lighten($color-primary, 35%);
-        border-radius: $border-radius-sm;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: $color-primary;
-      }
-      p {
-        font-weight: $font-weight-medium;
+        width: 24px;
+        height: 24px;
+        background-color: #4d44b5;
       }
     }
 
-    .item-count {
-      font-weight: $font-weight-bold;
+    p {
+      font-weight: $font-weight-medium;
+      margin: 0;
+    }
+
+    small {
       color: $color-text-light;
-      cursor: pointer;
-      &:hover {
-        color: $color-primary;
-      }
+      font-size: $font-size-sm;
     }
   }
 }
