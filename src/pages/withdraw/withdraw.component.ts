@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { WithdrawService } from '../../services/withdraw.service';
 
 @Component({
   selector: 'app-withdraw',
@@ -9,14 +10,15 @@ export class WithdrawComponent {
   selectedMethod: 'bank' | 'stc' = 'bank';
   isWithdrawalSubmittedModalOpen = false;
 
+  constructor(private withdrawService: WithdrawService) {}
+
   selectMethod(method: 'bank' | 'stc') {
     this.selectedMethod = method;
   }
 
   onRequestWithdraw() {
-    // Here you would typically handle the form submission,
-    // e.g., send data to a service.
-    // For now, we'll just open the success modal.
-    this.isWithdrawalSubmittedModalOpen = true;
+    this.withdrawService.requestWithdrawal({ method: this.selectedMethod }).subscribe(() => {
+      this.isWithdrawalSubmittedModalOpen = true;
+    });
   }
 }
