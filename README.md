@@ -70,15 +70,28 @@ _Add screenshots of the running app here after you run `ng serve`._
 
 ---
 
-## 📦 Deployment
+## 📦 Deployment to Vercel
 
-To build for production:
+This project is configured for zero-hassle deployment to Vercel.
+
+- **Build Command**: `npm run vercel-build`
+- **Output Directory**: `dist/dashboard`
+- **Node.js Version**: `18.x`
+
+Simply connect your Git repository to Vercel and it will detect the settings automatically.
+
+## ✅ Local Testing
+
+To test the production build locally, run the following commands:
 
 ```bash
-ng build --configuration production
-```
+# 1. Build the project
+npm run build
 
-This will generate a `/dist` folder ready for deployment (Netlify, Vercel, GitHub Pages, etc.).
+# 2. Serve the output folder
+# (Install http-server globally if you haven't already: npm install -g http-server)
+http-server dist/dashboard
+```
 
 ---
 
