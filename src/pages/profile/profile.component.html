@@ -13,11 +13,15 @@
     <div class="card social-media-section">
       <div class="section-header">
         <h3>Social Media</h3>
-        <button class="edit-btn" *ngIf="!isEditingSocial" (click)="isEditingSocial = true">
-          Edit
-          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/edit.svg)'" [style.mask-image]="'url(assets/icons/edit.svg)'"></span>
-        </button>
-        <button class="done-btn" *ngIf="isEditingSocial" (click)="isEditingSocial = false">Done</button>
+        @if (!isEditingSocial) {
+          <button class="edit-btn" (click)="isEditingSocial = true">
+            Edit
+            <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/edit.svg)'" [style.mask-image]="'url(assets/icons/edit.svg)'"></span>
+          </button>
+        }
+        @if (isEditingSocial) {
+          <button class="done-btn" (click)="isEditingSocial = false">Done</button>
+        }
       </div>
       <div class="social-links">
         <div class="social-link facebook">
@@ -26,8 +30,12 @@
           </div>
           <div class="link-info">
             <p>Facebook</p>
-            <a *ngIf="!isEditingSocial" [href]="user.social.facebook" target="_blank">{{ user.social.facebook }}</a>
-            <input *ngIf="isEditingSocial" type="text" [(ngModel)]="user.social.facebook">
+            @if (!isEditingSocial) {
+              <a [href]="user.social.facebook" target="_blank">{{ user.social.facebook }}</a>
+            }
+            @if (isEditingSocial) {
+              <input type="text" [(ngModel)]="user.social.facebook">
+            }
             <small>Number of students from Facebook</small>
           </div>
         </div>
@@ -37,8 +45,12 @@
           </div>
           <div class="link-info">
             <p>Instagram</p>
-            <a *ngIf="!isEditingSocial" [href]="user.social.instagram" target="_blank">{{ user.social.instagram }}</a>
-            <input *ngIf="isEditingSocial" type="text" [(ngModel)]="user.social.instagram">
+            @if (!isEditingSocial) {
+              <a [href]="user.social.instagram" target="_blank">{{ user.social.instagram }}</a>
+            }
+            @if (isEditingSocial) {
+              <input type="text" [(ngModel)]="user.social.instagram">
+            }
             <small>Number of students from Instagram</small>
           </div>
         </div>
@@ -48,8 +60,12 @@
           </div>
           <div class="link-info">
             <p>Tiktok</p>
-            <a *ngIf="!isEditingSocial" [href]="user.social.tiktok" target="_blank">{{ user.social.tiktok }}</a>
-            <input *ngIf="isEditingSocial" type="text" [(ngModel)]="user.social.tiktok">
+            @if (!isEditingSocial) {
+              <a [href]="user.social.tiktok" target="_blank">{{ user.social.tiktok }}</a>
+            }
+            @if (isEditingSocial) {
+              <input type="text" [(ngModel)]="user.social.tiktok">
+            }
             <small>Number of students from Tiktok</small>
           </div>
         </div>
@@ -60,65 +76,89 @@
     <div class="card personal-information-section">
       <div class="section-header">
         <h3>Personal Information</h3>
-        <button class="edit-btn" *ngIf="!isEditingPersonalInfo" (click)="isEditingPersonalInfo = true">
-          Edit
-          <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/edit.svg)'" [style.mask-image]="'url(assets/icons/edit.svg)'"></span>
-        </button>
-        <button class="done-btn" *ngIf="isEditingPersonalInfo" (click)="isEditingPersonalInfo = false">Done</button>
+        @if (!isEditingPersonalInfo) {
+          <button class="edit-btn" (click)="isEditingPersonalInfo = true">
+            Edit
+            <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/edit.svg)'" [style.mask-image]="'url(assets/icons/edit.svg)'"></span>
+          </button>
+        }
+        @if (isEditingPersonalInfo) {
+          <button class="done-btn" (click)="isEditingPersonalInfo = false">Done</button>
+        }
       </div>
       <div class="info-grid">
         <div class="form-group">
           <label>First name</label>
-          <p *ngIf="!isEditingPersonalInfo">{{ user.firstName }}</p>
-          <input *ngIf="isEditingPersonalInfo" type="text" [(ngModel)]="user.firstName">
+          @if (!isEditingPersonalInfo) {
+            <p>{{ user.firstName }}</p>
+          }
+          @if (isEditingPersonalInfo) {
+            <input type="text" [(ngModel)]="user.firstName">
+          }
         </div>
         <div class="form-group">
           <label>Last name</label>
-          <p *ngIf="!isEditingPersonalInfo">{{ user.lastName }}</p>
-          <input *ngIf="isEditingPersonalInfo" type="text" [(ngModel)]="user.lastName">
+          @if (!isEditingPersonalInfo) {
+            <p>{{ user.lastName }}</p>
+          }
+          @if (isEditingPersonalInfo) {
+            <input type="text" [(ngModel)]="user.lastName">
+          }
         </div>
         <div class="form-group">
           <label>Email</label>
-          <p *ngIf="!isEditingPersonalInfo">{{ user.email }}</p>
-          <input *ngIf="isEditingPersonalInfo" type="email" [(ngModel)]="user.email">
+          @if (!isEditingPersonalInfo) {
+            <p>{{ user.email }}</p>
+          }
+          @if (isEditingPersonalInfo) {
+            <input type="email" [(ngModel)]="user.email">
+          }
         </div>
         <div class="form-group">
           <label>Phone</label>
-          <p *ngIf="!isEditingPersonalInfo">{{ user.phone }}</p>
-          <input *ngIf="isEditingPersonalInfo" type="tel" [(ngModel)]="user.phone">
+          @if (!isEditingPersonalInfo) {
+            <p>{{ user.phone }}</p>
+          }
+          @if (isEditingPersonalInfo) {
+            <input type="tel" [(ngModel)]="user.phone">
+          }
         </div>
         <div class="form-group bio">
           <label>BIO</label>
-          <p *ngIf="!isEditingPersonalInfo">{{ user.bio }}</p>
-          <textarea *ngIf="isEditingPersonalInfo" [(ngModel)]="user.bio"></textarea>
+          @if (!isEditingPersonalInfo) {
+            <p>{{ user.bio }}</p>
+          }
+          @if (isEditingPersonalInfo) {
+            <textarea [(ngModel)]="user.bio"></textarea>
+          }
         </div>
       </div>
     </div>
 
     <!-- Barcode Information Section -->
     <div class="card barcode-information-section">
-        <div class="section-header">
-            <h3>Barcode Information</h3>
+      <div class="section-header">
+        <h3>Barcode Information</h3>
+      </div>
+      <div class="barcode-grid">
+        <div class="info-item">
+          <label>Barcode</label>
+          <p>{{ user.barcode.code }}</p>
         </div>
-        <div class="barcode-grid">
-            <div class="info-item">
-                <label>Barcode</label>
-                <p>{{ user.barcode.code }}</p>
-            </div>
-            <div class="info-item">
-                <label>Activation start</label>
-                <p>{{ user.barcode.activationStart }}</p>
-            </div>
-            <div class="info-item">
-                <label>End of activation</label>
-                <p>{{ user.barcode.activationEnd }}</p>
-            </div>
+        <div class="info-item">
+          <label>Activation start</label>
+          <p>{{ user.barcode.activationStart }}</p>
         </div>
-        <div class="extend-barcode">
-            <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/star.svg)'" [style.mask-image]="'url(assets/icons/star.svg)'"></span>
-            <p>To extend the barcode activation period</p>
-            <button class="request-btn" (click)="isExtendBarcodeModalOpen = true">Request</button>
+        <div class="info-item">
+          <label>End of activation</label>
+          <p>{{ user.barcode.activationEnd }}</p>
         </div>
+      </div>
+      <div class="extend-barcode">
+        <span class="icon" [style.-webkit-mask-image]="'url(assets/icons/star.svg)'" [style.mask-image]="'url(assets/icons/star.svg)'"></span>
+        <p>To extend the barcode activation period</p>
+        <button class="request-btn" (click)="isExtendBarcodeModalOpen = true">Request</button>
+      </div>
     </div>
   </main>
 </div>

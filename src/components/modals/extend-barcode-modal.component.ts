@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-extend-barcode-modal',
-  templateUrl: './extend-barcode-modal.component.html',
-  styleUrls: ['./extend-barcode-modal.component.scss']
+    selector: 'app-extend-barcode-modal',
+    templateUrl: './extend-barcode-modal.component.html',
+    styleUrls: ['./extend-barcode-modal.component.scss'],
+    standalone: false
 })
 export class ExtendBarcodeModalComponent {
   @Input() isOpen = false;

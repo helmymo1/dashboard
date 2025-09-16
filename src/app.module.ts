@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
+import { provideHttpClient, withInterceptorsFromDi } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
@@ -17,27 +17,20 @@ import { DiscountModalComponent } from './components/modals/discount-modal.compo
 import { ExtendBarcodeModalComponent } from './components/modals/extend-barcode-modal.component';
 import { WithdrawalSubmittedModalComponent } from './components/modals/withdrawal-submitted-modal.component';
 
-@NgModule({
-  declarations: [
-    AppComponent,
-    OverviewComponent,
-    ProfileComponent,
-    WithdrawComponent,
-    HeaderComponent,
-    SidebarComponent,
-    ModalComponent,
-    CommissionModalComponent,
-    DiscountModalComponent,
-    ExtendBarcodeModalComponent,
-    WithdrawalSubmittedModalComponent
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
-})
+@NgModule({ declarations: [
+        AppComponent,
+        OverviewComponent,
+        ProfileComponent,
+        WithdrawComponent,
+        HeaderComponent,
+        SidebarComponent,
+        ModalComponent,
+        CommissionModalComponent,
+        DiscountModalComponent,
+        ExtendBarcodeModalComponent,
+        WithdrawalSubmittedModalComponent
+    ],
+    bootstrap: [AppComponent], imports: [BrowserModule,
+        AppRoutingModule,
+        FormsModule], providers: [provideHttpClient(withInterceptorsFromDi())] })
 export class AppModule { }
