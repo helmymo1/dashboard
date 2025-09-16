@@ -5,29 +5,35 @@ It includes **Overview**, **Profile**, and **Withdraw** pages, plus reusable com
 
 ---
 
-## 🚀 Getting Started
-
-### 1. Clone the repository
+## Setup
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/figma-dashboard.git
-cd figma-dashboard
+npm ci
+npm run start
 ```
 
-### 2. Install dependencies
+## Build
 
 ```bash
-npm install -g @angular/cli
-npm install
+npm run build
 ```
 
-### 3. Run locally
+## Deploy to Vercel
 
-```bash
-ng serve
-```
+- **Build Command**: `npm run build`
+- **Output Directory**: `dist/dashboard`
+- **Node**: `18.x`
 
-Open [http://localhost:4200](http://localhost:4200) in your browser.
+## API Environment Variables
+
+The API endpoint is configured in the environment files located at `src/environments/`.
+
+- `src/environments/environment.ts`: Used for local development.
+  - `apiUrl`: `http://localhost:3000`
+- `src/environments/environment.prod.ts`: Used for production builds.
+  - `apiUrl`: `https://api.cosqool.com`
+
+When deploying to Vercel, you can override these variables by setting environment variables in your Vercel project settings.
 
 ---
 
@@ -66,32 +72,7 @@ src/app/
 
 ## 🖼️ Screenshots
 
-_Add screenshots of the running app here after you run `ng serve`._
-
----
-
-## 📦 Deployment to Vercel
-
-This project is configured for zero-hassle deployment to Vercel.
-
-- **Build Command**: `npm run vercel-build`
-- **Output Directory**: `dist/dashboard`
-- **Node.js Version**: `18.x`
-
-Simply connect your Git repository to Vercel and it will detect the settings automatically.
-
-## ✅ Local Testing
-
-To test the production build locally, run the following commands:
-
-```bash
-# 1. Build the project
-npm run build
-
-# 2. Serve the output folder
-# (Install http-server globally if you haven't already: npm install -g http-server)
-http-server dist/dashboard
-```
+_Add screenshots of the running app here after you run `npm run start`._
 
 ---
 
