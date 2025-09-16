@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-discount-modal',
-  templateUrl: './discount-modal.component.html',
-  styleUrls: ['./discount-modal.component.scss']
+    selector: 'app-discount-modal',
+    templateUrl: './discount-modal.component.html',
+    styleUrls: ['./discount-modal.component.scss'],
+    standalone: false
 })
 export class DiscountModalComponent {
   @Input() isOpen = false;

@@ -1,9 +1,10 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 
 @Component({
-  selector: 'app-commission-modal',
-  templateUrl: './commission-modal.component.html',
-  styleUrls: ['./commission-modal.component.scss']
+    selector: 'app-commission-modal',
+    templateUrl: './commission-modal.component.html',
+    styleUrls: ['./commission-modal.component.scss'],
+    standalone: false
 })
 export class CommissionModalComponent {
   @Input() isOpen = false;
