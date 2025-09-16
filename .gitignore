@@ -78,3 +78,9 @@ dist/
 
 # Angular cache
 .angular/
+
+# Junk files
+src/**/*.spec.ts
+.anima
+.jules-scratch
+*.zip
